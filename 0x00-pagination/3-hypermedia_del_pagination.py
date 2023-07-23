@@ -40,6 +40,9 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """
+        Implementation.
+        """
         assert (index <= len(self.dataset()))
         pages = int(len(self.dataset())/page_size)
         hyper_index = dict()

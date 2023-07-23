@@ -28,6 +28,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Implementation.
+        """
         assert (type(page) == int and type(page_size) == int
                and page_size and page > 0)
         try:

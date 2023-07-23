@@ -4,7 +4,7 @@ Takes two integer args with default values.
 """
 import csv
 import math
-from typing import List, Mapping
+from typing import List, Dict
 index_range = __import__("0-simple_helper_function").index_range
 
 
@@ -28,6 +28,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Implementation.
+        """
         assert (type(page) == int and type(page_size) == int
                 and page_size and page > 0)
         try:
@@ -36,7 +39,10 @@ class Server:
         except Exception as error:
             return list()
 
-    def get_hyper(self, page: int = 1, pg_z: int = 10) -> Mapping:
+    def get_hyper(self, page: int = 1, pg_z: int = 10) -> Dict:
+        """
+        Implementation.
+        """
         hyper_dict = dict()
         pages = int(len(self.dataset()))
         hyper_dict["page_size"] = len(self.get_page(page, pg_z))
